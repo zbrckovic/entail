@@ -1,0 +1,76 @@
+{
+  "name": "entail-vscode-extension",
+  "version": "1.0.0",
+  "description": "Support for Entail language",
+  "author": "Zeljko Brckovic",
+  "license": "GPL-3.0-or-later",
+  "displayName": "entail",
+  "engines": {
+    "node": "^14.16.0",
+    "vscode": "^1.64.0"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:entail"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "entail",
+        "extensions": [
+          ".entail"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "entail",
+        "scopeName": "source.entail",
+        "path": "./syntaxes/entail.tmGrammar.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "entail.applyRule",
+        "title": "Apply Rule"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Example configuration",
+      "properties": {
+        "languageServerExample.maxNumberOfProblems": {
+          "scope": "resource",
+          "type": "number",
+          "default": 100,
+          "description": "Controls the maximum number of problems produced by the server."
+        },
+        "languageServerExample.trace.server": {
+          "scope": "window",
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "off",
+          "description": "Traces the communication between VS Code and the language server."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.5",
+    "@types/vscode": "^1.52.0",
+    "@vscode/test-electron": "^1.6.1",
+    "@types/node": "^12.12.0"
+  }
+}

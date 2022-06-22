@@ -1,0 +1,103 @@
+{
+    "scopeName": "source.entail",
+    "patterns": [
+        {
+            "include": "#keyword"
+        },
+        {
+            "include": "#string"
+        },
+        {
+            "include": "#rule"
+        },
+        {
+            "include": "#truth-functional-operator"
+        },
+        {
+            "include": "#predicate-variable"
+        },
+        {
+            "include": "#propositional-variable"
+        },
+        {
+            "include": "#individual-variable"
+        },
+        {
+            "include": "#comma"
+        },
+        {
+            "include": "#existential-quantifier"
+        },
+        {
+            "include": "#universal-quantifier"
+        },
+        {
+            "include": "#number"
+        }
+    ],
+    "repository": {
+        "keyword": {
+            "match": "\\b(import|from|in|substitute|with|result)\\b",
+            "name": "keyword.control.entail"
+        },
+        "rule": {
+            "match": "(PR|TH|\\+AND|\\-AND|\\+IFF|\\-IFF|\\+IF|\\-IF|\\+OR|\\-OR|\\+NOT|\\-NOT|XP|\\+A|\\-A|\\+E|\\-E)",
+            "name": "entity.name.type.rule.entail"
+        },
+        "number": {
+            "name": "constant.numeric.line-number.entail",
+            "match": "[0-9]+"
+        },
+        "string": {
+            "begin": "\"",
+            "end": "\"",
+            "name": "string.quoted.double.filepath.entail",
+            "patterns": [
+                {
+                    "match": "\\\\.",
+                    "name": "constant.character.escape.entail"
+                }
+            ]
+        },
+        "truth-functional-operator": {
+            "match": "(~|<->|->|&|\\|)",
+            "name": "keyword.operator.truth-functional-operator.entail"
+        },
+        "propositional-variable": {
+            "match": "[A-Z][0-9]*",
+            "name": "entity.name.function.propositional-variable.entail"
+        },
+        "predicate-variable": {
+            "match": "([A-Z][0-9]*)(?=([a-z]|\\())",
+            "name": "entity.name.function.predicate-variable.entail"
+        },
+        "individual-variable": {
+            "match": "[a-z][0-9]*",
+            "name": "variable.other.individual-variable.ential"
+        },
+        "universal-quantifier": {
+            "begin": "\\((?=\\s*[a-z][0-9]*\\s*\\))",
+            "end": "\\)",
+            "name": "storage.type.universal-quantifier.entail",
+            "patterns": [
+                {
+                    "include": "#individual-variable"
+                }
+            ]
+        },
+        "existential-quantifier": {
+            "begin": "\\[",
+            "end": "\\]",
+            "name": "storage.type.existential-quantifier.entail",
+            "patterns": [
+                {
+                    "include": "#individual-variable"
+                }
+            ]
+        },
+        "comma": {
+            "match": ",",
+            "name": "punctuation.separator.comma.entail"
+        }
+    }
+}
