@@ -1,0 +1,5 @@
+1) [x] (y) Fyx : PR;
+2) (y) Fya     : -E 1;
+3) Fba         : -A 2;
+4) [x] Fbx     : +E 3;
+5) (y) [x] Fyx : +A 4;

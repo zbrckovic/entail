@@ -170,7 +170,7 @@ class Deduction:
         dep_formula = dependencies[0].formula
         res_formula = line.formula
 
-        if not is_existential(dep_formula):
+        if not is_existential(res_formula):
             raise InvalidRuleApplicationException(
                 self, line_index, Rule.E_IN,
                 'resulting formula not existentially quantified')
