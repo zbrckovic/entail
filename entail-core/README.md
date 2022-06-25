@@ -12,7 +12,7 @@ If you only want to run tests and not modify the code in `src` run:
 On the other hand, if you want to modify the code in `src` and run tests
 against your changes run:
 
-    pip install . -e
+    pip install -e .
 
 This will make a link to the existing code in `src` and tests will always be
 run against the latest code you have been working on.
