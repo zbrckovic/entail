@@ -8,13 +8,13 @@ from entail_core.constants import ENTAIL_FILE_EXTENSION
 
 def cli():
     parser = argparse.ArgumentParser()
-    parser.add_argument('infile', nargs='?', type=argparse.FileType('r'))
+    parser.add_argument('infile', nargs='?', type=Path)
     args = parser.parse_args(
         ['../../../entail-deductions/modus-tollens.entail'])
 
     file = extract_input_file(args)
 
-    return CLIResult(file)
+    return CLIResult(file, True)
 
 
 def extract_input_file(args):
@@ -22,10 +22,9 @@ def extract_input_file(args):
     if args.infile is None:
         return
 
-    path = Path(args.infile.name).resolve()
+    path = args.infile.resolve()
     validate_file_extension(path)
-    text = args.infile.read()
-    return path, text
+    return path
 
 
 def validate_file_extension(path):
@@ -36,4 +35,5 @@ def validate_file_extension(path):
 
 @dataclass
 class CLIResult:
-    file: Optional[tuple[Path, str]]
+    file: Optional[Path]
+    deep: True
