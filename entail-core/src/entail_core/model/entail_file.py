@@ -1,8 +1,8 @@
 from dataclasses import field, dataclass
 from enum import Enum, auto
 
-from .deduction.deduction import Deduction
-from .formula.formula import Formula
+from entail_core.model.deduction.deduction import Deduction
+from entail_core.model.formula.formula import Formula
 from .substitution import Substitution, \
     InvalidSubstitutionException, InvalidSubstitutionResultException
 from .theorem_import import TheoremImport

@@ -5,15 +5,16 @@ from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import urlparse, unquote
 
-from entail_core.deduction.deduction import InvalidRuleApplicationException
-from entail_core.entail_file import DuplicateFormulaDeclarationException, \
+from entail_core.model.deduction.deduction import \
+    InvalidRuleApplicationException
+from entail_core.model.entail_file import DuplicateFormulaDeclarationException, \
     FormulaDeclarationTargetType, FormulaDeclarationTarget
 from entail_core.parser.ast_processing import process_ast
 from entail_core.parser.parsing import parse
 from entail_core.parser.util import get_tree_range
-from entail_core.substitution import InvalidSubstitutionException, \
+from entail_core.model.substitution import InvalidSubstitutionException, \
     InvalidSubstitutionResultException
-from entail_core.text_document_exception import TextDocumentException, \
+from entail_core.text.text_document_exception import TextDocumentException, \
     RelatedErrorInfo
 
 from theorems_manager import InvalidEntailFileException, NoSuchFileException, \

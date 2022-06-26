@@ -6,7 +6,7 @@ from antlr4 import InputStream, CommonTokenStream
 
 from entail_core.antlr.EntailLexer import EntailLexer
 from entail_core.antlr.EntailParser import EntailParser
-from entail_core.text_document_exception import TextDocumentException
+from entail_core.text.text_document_exception import TextDocumentException
 from .entail_error_listener import EntailErrorListener
 from .entail_error_strategy import EntailErrorStrategy
 

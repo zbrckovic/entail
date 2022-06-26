@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from .formula.formula import Formula
+from entail_core.model.formula.formula import Formula
 
 
 @dataclass

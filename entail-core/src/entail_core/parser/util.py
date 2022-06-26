@@ -1,7 +1,7 @@
 from antlr4.Token import CommonToken
 
 from entail_core.antlr.EntailParser import EntailParser
-from entail_core.text import Position, Range
+from entail_core.text.text import Position, Range
 
 
 def is_rule(rule_name, rule_index):

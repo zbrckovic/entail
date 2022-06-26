@@ -1,8 +1,8 @@
 from abc import ABC
 
-from entail_core.entail_file import EntailFile
-from entail_core.substitution import Substitution, DuplicatePredVarException
-from entail_core.theorem_import import TheoremImport
+from entail_core.model.entail_file import EntailFile
+from entail_core.model.substitution import Substitution, DuplicatePredVarException
+from entail_core.model.theorem_import import TheoremImport
 from .ast_processing_exceptions import \
     DuplicatePredVarInSubstitutionException
 from .deduction_visitor import DeductionVisitor

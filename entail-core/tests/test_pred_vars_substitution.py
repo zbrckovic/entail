@@ -1,6 +1,6 @@
 import unittest
 
-from entail_core.formula.pred_vars_substitution_visitor import \
+from entail_core.model.formula.pred_vars_substitution_visitor import \
     SubstituteTemplate, SubstituteBecomesBoundException, \
     SubstituteBindsExternalIndVarException
 from .formula_parser import FormulaParser

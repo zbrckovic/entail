@@ -1,5 +1,5 @@
-from entail_core.deduction.rule import rule_arities
-from entail_core.text_document_exception import TextDocumentException, \
+from entail_core.model.deduction.rule import rule_arities
+from entail_core.text.text_document_exception import TextDocumentException, \
     RelatedErrorInfo
 from .ast_processing_exceptions import UnexpectedLineNumberException, \
     DependencyLineNumberOutOfRangeException, DuplicateDependencyException, \

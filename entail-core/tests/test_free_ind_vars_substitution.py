@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-from entail_core.formula.free_ind_vars_substitution_visitor import \
+from entail_core.model.formula.free_ind_vars_substitution_visitor import \
     IndVarBecomesBoundException
-from entail_core.formula.variables import IndVar
+from entail_core.model.formula.variables import IndVar
 from .formula_parser import FormulaParser
 
 

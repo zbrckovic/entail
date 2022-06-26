@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from entail_core.formula.variables import IndVar
+from entail_core.model.formula.variables import IndVar
 from .formula_parser import FormulaParser
 
 

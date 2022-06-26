@@ -1,7 +1,8 @@
 from unittest import TestCase
 
-from entail_core.deduction.deduction import InvalidRuleApplicationException
-from entail_core.deduction.rule import Rule
+from entail_core.model.deduction.deduction import \
+    InvalidRuleApplicationException
+from entail_core.model.deduction.deduction import Rule
 from .deduction_parser import DeductionParser
 
 

@@ -1,9 +1,9 @@
 from unittest import TestCase
 
-from entail_core.deduction.ind_var_dependency_graph import \
+from entail_core.model.deduction.ind_var_dependency_graph import \
     IndVarDependencyGraph, CycleInducingDependencyException, \
     IndVarAlreadyRegisteredAsDependentException
-from entail_core.formula.variables import IndVar
+from entail_core.model.formula.variables import IndVar
 
 
 class TestIndVarDependencyGraph(TestCase):

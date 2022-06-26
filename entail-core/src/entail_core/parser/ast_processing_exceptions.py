@@ -1,4 +1,4 @@
-from entail_core.substitution import DuplicatePredVarException
+from entail_core.model.substitution import DuplicatePredVarException
 
 
 class ASTProcessingException(Exception):

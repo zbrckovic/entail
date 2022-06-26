@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Optional
 
-from entail_core.formula.formula import Formula
+from entail_core.model.formula.formula import Formula
 from .rule import Rule
 
 

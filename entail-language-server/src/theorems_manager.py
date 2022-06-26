@@ -2,10 +2,10 @@ import asyncio
 from asyncio import Task
 
 from aiofile import async_open
-from entail_core.formula.formula import Formula
+from entail_core.model.formula.formula import Formula
 from entail_core.parser.ast_processing import process_ast
 from entail_core.parser.parsing import parse
-from entail_core.text_document_exception import TextDocumentException
+from entail_core.text.text_document_exception import TextDocumentException
 
 
 class TheoremsManager:

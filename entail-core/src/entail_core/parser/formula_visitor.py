@@ -3,11 +3,11 @@ from antlr4.Token import CommonToken
 from entail_core.antlr.EntailLexer import EntailLexer
 from entail_core.antlr.EntailParser import EntailParser
 from entail_core.antlr.EntailVisitor import EntailVisitor
-from entail_core.formula.constants import NEGATION, CONDITIONAL, CONJUNCTION, \
+from entail_core.model.formula.constants import NEGATION, CONDITIONAL, CONJUNCTION, \
     DISJUNCTION, BICONDITIONAL, Quantifier
-from entail_core.formula.formula import AtomicFormula, CompoundFormula, \
+from entail_core.model.formula.formula import AtomicFormula, CompoundFormula, \
     QuantifiedFormula
-from entail_core.formula.variables import PredVar, IndVar
+from entail_core.model.formula.variables import PredVar, IndVar
 
 PredVarOccurrencesMap = dict[PredVar, list[EntailParser.AtomicFormulaContext]]
 PredVarOccurrenceMap = dict[PredVar, EntailParser.AtomicFormulaContext]

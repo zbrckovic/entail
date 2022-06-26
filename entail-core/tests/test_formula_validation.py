@@ -1,8 +1,8 @@
 from unittest import TestCase
 
-from entail_core.formula.constants import NEGATION, CONJUNCTION
-from entail_core.formula.formula import AtomicFormula, CompoundFormula
-from entail_core.formula.variables import PredVar, IndVar
+from entail_core.model.formula.constants import NEGATION, CONJUNCTION
+from entail_core.model.formula.formula import AtomicFormula, CompoundFormula
+from entail_core.model.formula.variables import PredVar, IndVar
 
 
 class TestFormulaValidation(TestCase):

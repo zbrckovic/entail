@@ -1,8 +1,8 @@
 import copy
 from dataclasses import dataclass, field
 
-from .formula.formula import Formula, AtomicFormula
-from .formula.pred_vars_substitution_visitor import \
+from entail_core.model.formula.formula import Formula, AtomicFormula
+from entail_core.model.formula.pred_vars_substitution_visitor import \
     SubstituteTemplate, SubstituteBecomesBoundException, \
     SubstituteBindsExternalIndVarException
 

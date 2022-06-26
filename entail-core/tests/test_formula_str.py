@@ -1,10 +1,10 @@
 from unittest import TestCase
 
-from entail_core.formula.constants import Quantifier, NEGATION, CONJUNCTION, \
+from entail_core.model.formula.constants import Quantifier, NEGATION, CONJUNCTION, \
     DISJUNCTION, BICONDITIONAL, CONDITIONAL
-from entail_core.formula.formula import AtomicFormula, QuantifiedFormula, \
+from entail_core.model.formula.formula import AtomicFormula, QuantifiedFormula, \
     CompoundFormula
-from entail_core.formula.variables import PredVar, IndVar
+from entail_core.model.formula.variables import PredVar, IndVar
 
 
 class TestFormula(TestCase):

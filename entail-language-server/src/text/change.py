@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional
 
-from entail_core.text import Range
+from entail_core.text.text import Range
 
 
 @dataclass

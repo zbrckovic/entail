@@ -5,7 +5,7 @@ sys.path.append('./src')
 import textwrap
 import unittest
 
-from entail_core.text import Position, Range
+from entail_core.text.text import Position, Range
 from text.change import Change
 from text.text_document import TextDocument
 

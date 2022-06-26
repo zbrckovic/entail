@@ -2,8 +2,8 @@ from abc import ABC
 from copy import copy
 
 from entail_core.antlr.EntailLexer import EntailLexer
-from entail_core.deduction.deduction import Rule, Line, Deduction
-from entail_core.deduction.rule import rule_arities
+from entail_core.model.deduction.deduction import Rule, Line, Deduction
+from entail_core.model.deduction.rule import rule_arities
 from .ast_processing_exceptions import UnexpectedLineNumberException, \
     DependencyLineNumberOutOfRangeException, DuplicateDependencyException, \
     InvalidDependencyPremisesException, PremiseEliminationException, \

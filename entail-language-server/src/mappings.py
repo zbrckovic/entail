@@ -1,7 +1,7 @@
 """Translation between model and types from pygls library."""
 
-from entail_core.text import Range, Position
-from entail_core.text_document_exception import TextDocumentException
+from entail_core.text.text import Range, Position
+from entail_core.text.text_document_exception import TextDocumentException
 from pygls import lsp
 from pygls.lsp import Diagnostic, DiagnosticSeverity, \
     DiagnosticRelatedInformation, Location

@@ -2,8 +2,8 @@ from antlr4 import Token
 from antlr4.error.ErrorListener import ErrorListener
 
 from entail_core.antlr.EntailLexer import EntailLexer
-from entail_core.text import Position, Range
-from entail_core.text_document_exception import TextDocumentException
+from entail_core.text.text import Position, Range
+from entail_core.text.text_document_exception import TextDocumentException
 
 
 class EntailErrorListener(ErrorListener):

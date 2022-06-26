@@ -1,6 +1,6 @@
-from entail_core.formula.constants import NEGATION, BICONDITIONAL, CONJUNCTION, \
+from entail_core.model.formula.constants import NEGATION, BICONDITIONAL, CONJUNCTION, \
     DISJUNCTION, CONDITIONAL, Quantifier
-from entail_core.formula.formula import CompoundFormula, QuantifiedFormula
+from entail_core.model.formula.formula import CompoundFormula, QuantifiedFormula
 
 
 def is_conjunction(formula):
