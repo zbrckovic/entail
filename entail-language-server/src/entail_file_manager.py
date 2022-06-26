@@ -22,10 +22,16 @@ from theorems_manager import InvalidEntailFileException, NoSuchFileException, \
 
 @dataclass
 class EntailFileManager:
+    """Handles a single entail file."""
+
     def __init__(self, theorems_manager, uri, txt_doc):
         self.theorems_manager = theorems_manager
+        """Each entail file manager has a reference to theorems manager which
+        which contains an information about imported theorems and is required 
+        to validate theorem imports."""
 
         self.uri = uri
+
         self.txt_doc = txt_doc
         self.parse_result = None
         self.entail_file = None
@@ -37,7 +43,7 @@ class EntailFileManager:
         self.txt_doc.apply_changes(changes)
 
     def clear(self):
-        """Clears anything that relates to current text document."""
+        """Clears anything that relates to the current text document."""
 
         if self._task is not None:
             self._task.cancel()
