@@ -1,0 +1,1 @@
+ENTAIL_FILE_EXTENSION = 'entail'
