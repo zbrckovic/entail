@@ -2,6 +2,7 @@ import asyncio
 
 from aiofile import async_open
 
+from entail_core.async_dict import AsyncDict
 from entail_core.constants import ENTAIL_FILE_EXTENSION
 
 
@@ -9,34 +10,22 @@ class FileManager:
     """Manages a set of files."""
 
     def __init__(self):
-        self.tasks = {}
-        """Maps paths to tasks which resolve to file texts if those files 
-        are readable entail files."""
-
-    def _set_task(self, path, task):
-        old_task = self.tasks.get(path)
-
-        if old_task is not None:
-            old_task.cancel()
-
-        self.tasks[path] = task
+        self.files = AsyncDict()
+        """Maps paths to file texts."""
 
     async def get_text(self, path):
-        task = self.tasks.get(path)
+        text = await self.files.get(path)
 
-        if task is not None:
-            return await task
+        if text is not None:
+            return text
 
-        task = asyncio.create_task(self.load_from_filesystem(path))
-        self.tasks[path] = task
-        return await task
+        return await self.files.set(path, self.load_from_filesystem(path))
 
     async def set_text(self, path, text):
         async def get_text():
             return text
 
-        task = asyncio.create_task(get_text())
-        self._set_task(path, task)
+        self.files.set(path, get_text())
 
     @staticmethod
     async def load_from_filesystem(path):
