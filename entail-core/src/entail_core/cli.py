@@ -18,7 +18,8 @@ def cli():
 
 
 def extract_input_file(args):
-    # Get absolute path to the file.
+    """Extracts input file path and turns it into absolute path."""
+
     if args.infile is None:
         return
 
@@ -28,6 +29,8 @@ def extract_input_file(args):
 
 
 def validate_file_extension(path):
+    """Checks that `path` has the required extension."""
+
     if path.suffix != '.' + ENTAIL_FILE_EXTENSION:
         raise Exception(f'The file doesn\'t have the required extension '
                         f'"{ENTAIL_FILE_EXTENSION}".')
@@ -36,4 +39,10 @@ def validate_file_extension(path):
 @dataclass
 class CLIResult:
     file: Optional[Path]
+    """The file or directory of files to be validated. Defaults to the current 
+    directory if nothing's specified."""
+
     deep: True
+    """Whether validation should be performed recursively for all files which 
+    are direct or indirect dependencies. If False, all imports will be 
+    considered valid and no checks will be made."""

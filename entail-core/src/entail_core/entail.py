@@ -10,6 +10,9 @@ async def main():
     file_manager = FileManager()
     project_manager = ProjectManager(file_manager)
 
+    # TODO: Call validation with a file or a set of files depending on
+    #  whether `result.file` is a file or a directory.
+
     await project_manager.validate(result.file)
 
 
