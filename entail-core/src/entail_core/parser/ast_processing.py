@@ -1,3 +1,4 @@
+from entail_core.antlr.EntailParser import EntailParser
 from entail_core.model.deduction.rule import rule_arities
 from entail_core.text.text_document_exception import TextDocumentException, \
     RelatedErrorInfo
@@ -8,9 +9,10 @@ from .ast_processing_exceptions import UnexpectedLineNumberException, \
 from .entail_file_visitor import EntailFileVisitor
 from .formula_visitor import AmbiguousPredVarVisitedException
 from .util import get_token_range, get_tree_range
+from ..model.entail_file import EntailFile
 
 
-def process_ast(tree):
+def process_ast(tree: EntailParser.StartContext) -> EntailFile:
     visitor = EntailLanguageServerVisitor()
     return visitor.visit(tree)
 

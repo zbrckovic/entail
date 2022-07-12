@@ -1,4 +1,4 @@
-import asyncio
+from pathlib import Path
 
 from aiofile import async_open
 
@@ -13,7 +13,7 @@ class FileManager:
         self.files = AsyncDict()
         """Maps paths to file texts."""
 
-    async def get_text(self, path):
+    async def get_text(self, path: Path):
         text = await self.files.get(path)
 
         if text is not None:

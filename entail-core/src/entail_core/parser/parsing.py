@@ -11,7 +11,7 @@ from .entail_error_listener import EntailErrorListener
 from .entail_error_strategy import EntailErrorStrategy
 
 
-def parse(text):
+def parse(text: str) -> 'ParserResult':
     """Parses text and returns the result."""
 
     in_stream = InputStream(text)
